@@ -18,7 +18,8 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
         // Create an arrayList of words from one until ten
 
         ArrayList<String> words = new ArrayList<>();
-        words.add(0,"one");
+        words.add(0, "one");
         words.add(1, "two");
         words.add(2, "three");
         words.add(3, "four");
@@ -44,21 +45,37 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(8, "nine");
         words.add(9, "ten");
 
-        // print out each element of the words array to the Android logs
-        // use log.v with emulator, log.i with physical device
+        // Find the external layout that contains the column of words
 
-        Log.i("NumbersActivity", "word at index 0:" + words.get(0));
-        Log.i("NumbersActivity", "word at index 1:" + words.get(1));
-        Log.i("NumbersActivity", "word at index 2:" + words.get(2));
-        Log.i("NumbersActivity", "word at index 3:" + words.get(3));
-        Log.i("NumbersActivity", "word at index 4:" + words.get(4));
-        Log.i("NumbersActivity", "word at index 5:" + words.get(5));
-        Log.i("NumbersActivity", "word at index 6:" + words.get(6));
-        Log.i("NumbersActivity", "word at index 7:" + words.get(7));
-        Log.i("NumbersActivity", "word at index 8:" + words.get(8));
-        Log.i("NumbersActivity", "word at index 9:" + words.get(9));
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.rootView);
+
+        // variable for count the numbers of cicles and the right position
+        // of the elements of ArrayList
 
 
+        int index = 0;
+
+        // loop until the last position
+
+        while (index < words.size()) {
+
+            // create a texView at each cicle
+
+            TextView wordView = new TextView(this);
+
+            // set the text with that one stored at position referred by index
+            wordView.setText(words.get(index));
+
+
+            //add another child textView
+            if (rootLayout != null) {
+                rootLayout.addView(wordView);
+            }
+
+            // update position
+
+            index++;
+        }
     }
 
 

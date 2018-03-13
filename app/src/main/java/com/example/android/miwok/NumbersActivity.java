@@ -53,11 +53,11 @@ public class NumbersActivity extends AppCompatActivity {
         // of the elements of ArrayList
 
 
-        int index = 0;
+
 
         // loop until the last position
 
-        while (index < words.size()) {
+        for (int index = 0;index < words.size(); index++) {
 
             // create a texView at each cicle
 
@@ -71,10 +71,7 @@ public class NumbersActivity extends AppCompatActivity {
             if (rootLayout != null) {
                 rootLayout.addView(wordView);
             }
-
-            // update position
-
-            index++;
+            
         }
     }
 

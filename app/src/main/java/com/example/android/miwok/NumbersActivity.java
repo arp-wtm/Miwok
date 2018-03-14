@@ -59,7 +59,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         for (int index = 0;index < words.size(); index++) {
 
-            // create a texView at each cicle
+            // create a texView at each cycle
 
             TextView wordView = new TextView(this);
 
@@ -71,7 +71,7 @@ public class NumbersActivity extends AppCompatActivity {
             if (rootLayout != null) {
                 rootLayout.addView(wordView);
             }
-            
+
         }
     }
 

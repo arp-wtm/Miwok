@@ -33,16 +33,14 @@ public class ColorsActivity extends AppCompatActivity {
         // Create an arrayList of words from one until ten
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("one", "lutti"));
-        words.add(new Word("two", "otiiko"));
-        words.add(new Word("three", "tolookosu"));
-        words.add(new Word("four", "oyyisa"));
-        words.add(new Word("five", "massokka"));
-        words.add(new Word("six", "temmokka"));
-        words.add(new Word("seven", "kenekaku"));
-        words.add(new Word("eight", "kawinta"));
-        words.add(new Word("nine", "wo'e"));
-        words.add(new Word("ten", "na' a aacha"));
+        words.add(new Word("red", "wetetti"));
+        words.add(new Word("green", "chokokki"));
+        words.add(new Word("brown", "takaakki"));
+        words.add(new Word("gray", "topoppi"));
+        words.add(new Word("black", "kululli"));
+        words.add(new Word("white", "kelelli"));
+        words.add(new Word("dusty yellow", "ṭopiisә"));
+        words.add(new Word("mustard yellow", "chiwiiṭә"));
 
         /*
         Create an {@link WordAdapter}, whose data source is a list of Word. The

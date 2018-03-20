@@ -40,10 +40,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
      * @param words   A List of Words objects to display in a list
      */
     WordAdapter(Activity context, ArrayList<Word> words) {
-        // Here, we initialize the WordAdapter's internal storage for the context and the list.
-        // the second argument is used when the ArrayAdapter is populating a single TextView.
-        // Because this is a custom adapter for two TextViews the adapter is not
-        // going to use this second argument, so it can be any value. Here, we used 0.
+        /*
+        Here, we initialize the WordAdapter's internal storage for the context and the list.
+        the second argument is used when the ArrayAdapter is populating a single TextView.
+        Because this is a custom adapter for two TextViews the adapter is not
+        going to use this second argument, so it can be any value. Here, we used 0.
+        */
         super(context, 0, words);
     }
 
@@ -67,29 +69,35 @@ public class WordAdapter extends ArrayAdapter<Word> {
                     R.layout.list_item, parent, false);
         }
 
-        // Get the {@link Word} object located at this position in the list
+        /* Get the {@link Word} object located at this position in the list */
         Word currentWord = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID first_line
+        /* Find the TextView in the list_item.xml layout with the ID first_line */
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.first_line);
 
-        // Get the version name from the current AndroidFlavor object and
-        // set this text on the name TextView
+        /*
+        Get the version name from the current AndroidFlavor object and
+        set this text on the name TextView
+        */
         if (currentWord != null) {
             miwokTextView.setText(currentWord.getMiwokTranslation());
         }
 
-        // Find the TextView in the list_item.xml layout with the ID second_line
+        /* Find the TextView in the list_item.xml layout with the ID second_line */
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.second_line);
-        // Get the version number from the current AndroidFlavor object and
-        // set this text on the number TextView
+        /*
+        Get the version number from the current AndroidFlavor object and
+        set this text on the number TextView
+        */
         if (currentWord != null) {
             defaultTextView.setText(currentWord.getDefaultTranslation());
         }
 
 
-        // Return the whole list item layout (containing 2 TextViews )
-        // so that it can be shown in the ListView
+        /*
+        Return the whole list item layout (containing 2 TextViews )
+        so that it can be shown in the ListView
+        */
         return listItemView;
     }
 }

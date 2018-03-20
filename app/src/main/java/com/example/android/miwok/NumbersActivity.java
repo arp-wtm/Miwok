@@ -32,7 +32,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Create an arrayList of words from one until ten
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("one", "lutti"));
         words.add(new Word("two", "otiiko"));
         words.add(new Word("three", "tolookosu"));
@@ -44,11 +44,13 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("nine", "wo'e"));
         words.add(new Word("ten", "na' a aacha"));
 
-        // Create an {@link WordAdapter}, whose data source is a list of Word. The
-        // adapter knows how to create layouts for each item in the list, using the
-        // ListView_list layout resource defined word_list.xml
-        // This list item layout contains two {@link TextView}, which the adapter will set to
-        // display a couple of words.
+        /*
+        Create an {@link WordAdapter}, whose data source is a list of Word. The
+        adapter knows how to create layouts for each item in the list, using the
+        ListView_list layout resource defined word_list.xml
+        This list item layout contains two {@link TextView}, which the adapter will set to
+        display a couple of words.
+        */
 
         WordAdapter adapter = new WordAdapter(this, words);
 
@@ -63,6 +65,7 @@ public class NumbersActivity extends AppCompatActivity {
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
         // 1 argument, which is the {@link WordAdapter} with the variable name adapter.
 
+        assert list != null;
         list.setAdapter(adapter);
     }
 

@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,8 +56,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
      * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         /* Check if the existing view is being reused, otherwise inflate the view */
         View listItemView = convertView;
@@ -73,13 +75,17 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
-        miwokTextView.setText(currentWord.getMiwokTranslation());
+        if (currentWord != null) {
+            miwokTextView.setText(currentWord.getMiwokTranslation());
+        }
 
         // Find the TextView in the list_item.xml layout with the ID second_line
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.second_line);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        defaultTextView.setText(currentWord.getDefaultTranslation());
+        if (currentWord != null) {
+            defaultTextView.setText(currentWord.getDefaultTranslation());
+        }
 
 
         // Return the whole list item layout (containing 2 TextViews )

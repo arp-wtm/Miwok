@@ -45,15 +45,17 @@ class Word {
 
 
     /**
-     * Create a new Word object with 2 state: miwok and default translation.
+     * Create a new Word object with 3 state: miwok and default translation, audio resource.
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
+     * @param audioResourceId    is the id resource of pronunciation file
      */
-    Word(String defaultTranslation, String miwokTranslation) {
+    Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId= audioResourceId;
     }
 
     /**

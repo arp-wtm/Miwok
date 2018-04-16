@@ -35,6 +35,10 @@ class Word {
      * ID resource of the image related to the word
      */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
+    /**
+     * ID resource of the image related to the word
+     */
+    private int mAudioResourceId;
 
     /** Constant value that represents no image was provided for this word */
     private static final int NO_IMAGE_PROVIDED = -1;
@@ -60,11 +64,14 @@ class Word {
      * @param miwokTranslation   is the word in the Miwok language
      *
      *  @param imageResourceId is the id of the image
+     *
+     *  @param audioResourceId is the Id resource of audio file
      */
-    Word(String defaultTranslation, String miwokTranslation,int imageResourceId) {
+    Word(String defaultTranslation, String miwokTranslation,int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -87,11 +94,20 @@ class Word {
     int getImageResourceId() {
         return mImageResourceId;}
 
+
     /**
      * Returns whether or not there is an image for this word.
      */
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+
+    /**
+     * Get the Id resource of the audio file pronunciation
+     */
+
+     int getAudioResourceId() {
+        return mAudioResourceId;}
 
 }

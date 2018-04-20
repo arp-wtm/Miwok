@@ -28,4 +28,5 @@
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
     <string name="icon">image</string>
+    <string name="play_icon">play icon</string>
 </resources>

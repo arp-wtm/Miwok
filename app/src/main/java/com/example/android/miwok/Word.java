@@ -32,6 +32,19 @@ class Word {
     private String mMiwokTranslation;
 
     /**
+     * Returns the string representation of the {@link Word} object.
+     */
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                '}';
+    }
+
+    /**
      * ID resource of the image related to the word
      */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
@@ -60,16 +73,13 @@ class Word {
 
     /**
      * Create a new Word object with 3 state: miwok,default translation and ImageResourceId
-     *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
-     *
-     *  @param imageResourceId is the id of the image
-     *
-     *  @param audioResourceId is the Id resource of audio file
+     * @param imageResourceId is the id of the image
+     * @param audioResourceId is the Id resource of audio file
      */
-    Word(String defaultTranslation, String miwokTranslation,int imageResourceId, int audioResourceId) {
+    Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
